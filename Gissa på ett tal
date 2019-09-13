@@ -12,9 +12,12 @@ namespace Programering_gissa
             int num = rnd.Next(100);
 
             bool status = false;
+			int räknare = 0;
 
             while (status == false)
             {
+			räknare ++ ;
+
                 Console.WriteLine("Gissa på ett tal mellan 1 och 100");
                 string gissa = Console.ReadLine();
                 int.TryParse(gissa, out int gissning);
@@ -22,6 +25,7 @@ namespace Programering_gissa
                 {
                     status = true;
                     Console.WriteLine("Du har gissat rätt");
+					Console.WriteLine("Dina försök: "+räknare);
                 }
                 else if (gissning > num)
                 {
