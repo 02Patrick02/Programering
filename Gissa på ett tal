@@ -1,0 +1,43 @@
+using System;
+
+namespace Programering_gissa
+{
+    class Program
+    {
+      
+
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(100);
+
+            bool status = false;
+
+            while (status == false)
+            {
+                Console.WriteLine("Gissa på ett tal mellan 1 och 100");
+                string gissa = Console.ReadLine();
+                int.TryParse(gissa, out int gissning);
+                if (gissning == num)
+                {
+                    status = true;
+                    Console.WriteLine("Du har gissat rätt");
+                }
+                else if (gissning > num)
+                {
+                    Console.WriteLine("Numret är mindre");
+
+                }
+                else if (gissning < num)
+                {
+                    Console.WriteLine("Numret är större");
+
+                }
+
+
+            }
+
+            
+        }
+    }
+}
